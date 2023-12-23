@@ -131,7 +131,8 @@ func (r *RedisRepo) FindAll(ctx context.Context, page FindAllPage) (FindResult, 
 
 	if len(keys) == 0 {
 		return FindResult{
-			Orders: []model.Order{}
+			Orders: []model.Order{},
+			Cursor: uint64(cursor),
 		}, nil
 	}
 
